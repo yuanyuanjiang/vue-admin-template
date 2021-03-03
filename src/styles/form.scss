@@ -1,0 +1,13 @@
+// 重写elementui样式
+
+.searchForm {
+  .el-form-item {
+    width: 100%;
+    .el-form-item__content {
+      width: calc(100% - 100px);
+    }
+    .el-select {
+      width: 100%;
+    }
+  }
+}
