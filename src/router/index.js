@@ -59,18 +59,6 @@ export const asyncRoutes = [
         component: resolve =>
           require(["@/views/userStatistics/index"], resolve),
         meta: { authority: ["user_statistics"], title: "用户统计" }
-      },
-      {
-        path: "analysis",
-        name: "Analysis",
-        component: resolve => require(["@/views/Analysis/index"], resolve),
-        meta: { authority: ["analysis"], title: "用户分析" }
-      },
-      {
-        path: "deviceStatistics",
-        name: "DeviceStatistics",
-        component: resolve => require(["@/views/dashboard/index"], resolve),
-        meta: { authority: ["device_statistics"], title: "设备统计" }
       }
     ]
   },
@@ -108,40 +96,6 @@ export const asyncRoutes = [
       }
     ]
   },
-  // 报告管理
-  {
-    path: "/report",
-    component: Layout,
-    name: "Report",
-    meta: {
-      authority: ["report_list", "report_detail"],
-      title: "报告管理",
-      icon: "el-icon-Report"
-    },
-    alwaysShow: true,
-    children: [
-      {
-        path: "list",
-        name: "Report_list",
-        component: resolve => require(["@/views/Report/index"], resolve),
-        meta: {
-          authority: ["report_list"],
-          title: "报告列表"
-        }
-      },
-      {
-        path: "detail",
-        name: "Report_detail",
-        component: resolve => require(["@/views/Report/index"], resolve),
-        meta: {
-          authority: ["report_detail"],
-          title: "报告详情"
-        },
-        hidden: true
-      }
-    ]
-  },
-
   // 记录管理
   {
     path: "/record",
@@ -289,10 +243,34 @@ export const asyncRoutes = [
     alwaysShow: true,
     children: [
       {
-        path: "list",
+        path: "slot",
         name: "slot",
         component: resolve => require(["@/views/demo/slot/index"], resolve),
         meta: { title: "slot" }
+      },
+      {
+        path: "nextTick",
+        name: "nextTick",
+        component: resolve => require(["@/views/demo/nextTick/index"], resolve),
+        meta: { title: "nextTick" }
+      },
+      {
+        path: "filter",
+        name: "filter",
+        component: resolve => require(["@/views/demo/filter/index"], resolve),
+        meta: { title: "filter" }
+      },
+      {
+        path: "computed",
+        name: "computed",
+        component: resolve => require(["@/views/demo/computed/index"], resolve),
+        meta: { title: "computed" }
+      },
+      {
+        path: "watch",
+        name: "watch",
+        component: resolve => require(["@/views/demo/watch/index"], resolve),
+        meta: { title: "watch" }
       }
     ]
   },

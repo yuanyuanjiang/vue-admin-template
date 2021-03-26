@@ -52,7 +52,7 @@
         <el-table-column prop="createTime" label="创建时间"> </el-table-column>
         <el-table-column label="操作" show-overflow-tooltip>
           <template slot-scope="scope">
-            <el-button type="text">
+            <el-button type="text" v-if="checkPermission(['role_edit'])">
               <router-link :to="{ path: `/account/role/edit/${scope.row.id}` }">
                 编辑
               </router-link></el-button

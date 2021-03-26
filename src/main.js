@@ -8,16 +8,19 @@ import i18n from "./lang";
 import "@/styles/index.scss"; // global css
 import echarts from "echarts";
 
-
 import App from "./App";
 import store from "./store";
 import router from "./router";
 
 import "@/icons"; // icon
 import "@/permission"; // permission control
-import china from './json/geojson.json';
+import china from "./json/geojson.json";
 
-
+// 引入全局过滤函数
+import * as _filter from "@/utils/filters";
+Object.keys(_filter).forEach(item => {
+  Vue.filter(item, _filter[item]);
+});
 
 /**
  * If you don't want to use mock-server
@@ -38,7 +41,7 @@ if (process.env.NODE_ENV === "production") {
 Vue.use(ElementUI, { i18n: (key, value) => i18n.t(key, value) });
 Vue.prototype.$echarts = echarts;
 Vue.config.productionTip = false;
-echarts.registerMap('china', china);
+echarts.registerMap("china", china);
 
 new Vue({
   el: "#app",

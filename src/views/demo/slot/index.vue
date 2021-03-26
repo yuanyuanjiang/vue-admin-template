@@ -17,6 +17,7 @@
 <script>
 import mySlot from "./myslot";
 export default {
+  name: "solt",
   components: {
     "my-slot": mySlot
   }

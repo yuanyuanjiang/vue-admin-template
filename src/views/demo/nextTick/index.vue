@@ -10,6 +10,7 @@
 <script>
 import example2 from "./index2";
 export default {
+  name: "nextTick",
   components: {
     example2: example2
   },
